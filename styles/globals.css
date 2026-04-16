@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --cream: #F5F0E8;
+  --warm-white: #FAFAF7;
+  --parchment: #EDE8DC;
+  --stone: #C9C2B4;
+  --taupe: #9C9080;
+  --umber: #6B5F52;
+  --espresso: #3D3229;
+  --ink: #1C1714;
+  --gold: #B8965A;
+  --gold-light: #D4B483;
+  --gold-muted: #8A6E3E;
+  --sage: #7A8C7B;
+  --sage-light: #A8B8A9;
+  --rust: #9B5E4A;
+  --shadow-soft: 0 2px 20px rgba(28, 23, 20, 0.06);
+  --shadow-medium: 0 4px 40px rgba(28, 23, 20, 0.10);
+  --shadow-deep: 0 8px 60px rgba(28, 23, 20, 0.15);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 2px;
+  --radius-lg: 6px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--warm-white);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--parchment); }
+::-webkit-scrollbar-thumb { background: var(--stone); border-radius: 2px; }
+
+/* Top band / header */
+.topBand {
+  background: var(--espresso);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-medium);
+}
+
+.mainTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 18px 40px 0;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  background: var(--espresso);
+  color: var(--stone);
+  text-align: center;
+  padding: 24px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  margin-top: auto;
+}
+
+.footer hr {
+  display: none;
+}
+
+/* Nav links */
+.navLink {
+  color: var(--gold-light);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: var(--transition);
+}
+
+.navLink:hover {
+  color: var(--cream);
+}
+
+/* Subtitle */
+.subTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--umber);
+  text-align: center;
+  font-style: italic;
+  margin: 40px 0 20px;
+}
+
+/* Global button */
+button {
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+
+/* Page transitions */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: fadeUp 0.5s ease forwards;
+}
