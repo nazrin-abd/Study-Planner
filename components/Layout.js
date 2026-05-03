@@ -41,7 +41,6 @@ export default function Layout({ children }) {
         <nav style={navStyle}>
           <Link href="/" style={linkStyle(router.pathname === '/')}>Home</Link>
           {user && <Link href="/dashboard" style={linkStyle(router.pathname === '/dashboard')}>Dashboard</Link>}
-          {user && <Link href="/gallery" style={linkStyle(router.pathname === '/gallery')}>Gallery</Link>}
           {user
             ? <button onClick={handleLogout} style={logoutStyle}>Sign Out</button>
             : <Link href="/login" style={{ ...linkStyle(false), color: 'rgba(212, 180, 131, 0.9)' }}>Sign In</Link>
