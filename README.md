@@ -1,44 +1,60 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Study Planner
 
-## Getting Started
+I built this app to help students (including myself) stay on top of their academic life without juggling 5 different tools. Everything is in one place — your schedule, homework, notes, and even email reminders when deadlines are coming up.
 
-First, run the development server:
+Live: https://studyplanner-self-one.vercel.app/
+
+---
+
+## What you can do
+
+- Add your weekly class schedule and see it laid out by day
+- Keep track of homework and to-dos with deadlines
+- Log study sessions to see how much time you're actually putting in
+- Write notes and keep them saved
+- See your overall progress — how many tasks done, how many hours studied
+- Set reminders and get an email at the exact time you set
+
+---
+
+## How I built it
+
+The app is built with Next.js for both the frontend and backend (API routes). User data is stored in a MySQL database hosted on Railway. Authentication uses JWT tokens stored in HTTP-only cookies, and passwords are hashed with bcryptjs. Email reminders are sent through Gmail using Nodemailer, with a cron job checking every minute for due reminders. The whole thing is deployed on Vercel.
+
+---
+
+## Running it locally
+
+You'll need Node.js and a MySQL database. I used Railway for the database but anything works.
+
+```bash
+git clone https://github.com/nazrin-abd/Study-Planner.git
+cd Study-Planner
+npm install
+```
+
+Create a `.env.local` file:
+```
+JWT_SECRET=something_secret
+
+MYSQLHOST=your_host
+MYSQLPORT=your_port
+MYSQLUSER=your_user
+MYSQLPASSWORD=your_password
+MYSQLDATABASE=railway
+
+GMAIL_USER=your@gmail.com
+GMAIL_PASS=your_app_password
+```
+
+Then run the SQL to create the tables (users, schedule, todos, study_sessions, notes, reminders) and start the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Notes
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-=======
-# Study-Planner
->>>>>>> 8ea6c3358fc13bd755d3051bb843e7725fdc2e41
+This was a personal project so some things are still rough around the edges. Feel free to fork it and make it your own.
