@@ -22,7 +22,7 @@ export default function Newp() {
           <p className={styles.subTitle}>Model description</p>
           
         </div>
-
+    
     </>
   )
 }
