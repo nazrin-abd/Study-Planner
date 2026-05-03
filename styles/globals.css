@@ -127,3 +127,9 @@ button {
 .page-enter {
   animation: fadeUp 0.5s ease forwards;
 }
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 0.85rem;
+    padding: 14px 20px 0;
+  }
+}

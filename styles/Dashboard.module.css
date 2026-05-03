@@ -536,3 +536,76 @@
 .deadlineSoon {
   color: var(--gold-muted) !important;
 }
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    padding: 16px 0;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+  .sidebarUser {
+    display: none;
+  }
+
+  .sidebarBtn {
+    padding: 10px 16px;
+    white-space: nowrap;
+    font-size: 0.75rem;
+    border-bottom: none;
+    flex-shrink: 0;
+  }
+
+  .sidebarBtn::before {
+    width: 100%;
+    height: 2px;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+  }
+
+  .sidebarBtnActive::before {
+    transform: scaleX(1) !important;
+  }
+
+  .main {
+    padding: 24px 16px;
+  }
+
+  .scheduleGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .statGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .inputRow {
+    flex-direction: column;
+  }
+
+  .inputGroup {
+    min-width: 100%;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scheduleGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
