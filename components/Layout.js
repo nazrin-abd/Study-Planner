@@ -54,7 +54,7 @@ export default function Layout({ children }) {
       </main>
 
       <div className="footer">
-        <p>© 2023 Study Planner &nbsp;·&nbsp; All rights reserved</p>
+        <p>© 2026 Study Planner &nbsp;·&nbsp; All rights reserved</p>
       </div>
     </>
   )
