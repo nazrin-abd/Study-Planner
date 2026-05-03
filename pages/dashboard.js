@@ -399,7 +399,11 @@ export default function Dashboard() {
             <div>
               <span className={styles.itemTitle}>{r.title}</span>
               <div className={styles.itemMeta}>
-                {r.remind_at ? new Date(r.remind_at).toLocaleString('en-GB', { hour12: false, day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : ''}
+                {r.remind_at ? (() => {
+                  const d = new Date(r.remind_at)
+                  d.setHours(d.getHours() + 4) // Baku is UTC+4
+                  return d.toLocaleString('en-GB', { hour12: false, day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+                })() : ''}
                 {r.done && <span style={{ marginLeft: 8, color: 'var(--sage)' }}>· Sent</span>}
               </div>
             </div>
